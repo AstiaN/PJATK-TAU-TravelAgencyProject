@@ -1,0 +1,25 @@
+language: java
+
+sudo: false
+
+cache:
+ directories:
+   - $HOME/.m2
+
+before_install:
+  - export MAVEN_OPTS="-Xmx512M $MAVEN_OPTS"
+
+before_script:
+  - unset GEM_PATH GEM_HOME IRBRC JRUBY_OPTS
+  - export PATH="`pwd`/bin:$PATH"
+  - echo $HOME
+  - echo $JAVA_OPTS
+  - echo $MAVEN_OPTS
+
+jdk:
+  - oraclejdk9
+
+os:
+  - windows
+install: true
+script: mvn test
