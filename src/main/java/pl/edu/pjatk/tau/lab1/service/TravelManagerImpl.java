@@ -3,31 +3,41 @@ package pl.edu.pjatk.tau.lab1.service;
 import pl.edu.pjatk.tau.lab1.domain.Travel;
 
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.ArrayList;
 
 
 public class TravelManagerImpl implements TravelManager {
 
-    private Map<Integer,Travel> travelDB = new TreeMap<Integer,Travel>();
+    List<Travel> travelList = new ArrayList<Travel>();
 
-    public int create(Travel travel) {
-        return 0;
+    public void create(Travel travel) {
+        travelList.add(travel);
     }
 
     public List<Travel> readAll() {
         return null;
     }
 
-    public Travel read(int id) {
+
+    public Travel read(int travelId) {
+        for(Travel travel : travelList) {
+            if(travel.getId() == travelId)
+                return travel;
+        }
         return null;
     }
 
-    public void update(Travel travel, int id) throws IndexOutOfBoundsException {
-
+    public void update(Travel travel, int id) {
+        Travel t = read(travel.getId());
+        if(t != null) {
+            t.setId(travel.getId());
+            t.setFrom(travel.getFrom());
+            t.setDirection(travel.getDirection());
+            t.setPrice(travel.getPrice());
+        }
     }
 
     public void delete(Travel travel, int id) {
-
+        travelList.remove(travel);
     }
 }

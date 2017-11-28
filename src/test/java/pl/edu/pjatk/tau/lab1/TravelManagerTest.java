@@ -3,10 +3,8 @@ package pl.edu.pjatk.tau.lab1;
 
 import org.junit.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 import pl.edu.pjatk.tau.lab1.domain.Travel;
-import pl.edu.pjatk.tau.lab1.service.TravelManager;
 import pl.edu.pjatk.tau.lab1.service.TravelManagerImpl;
 
 
@@ -22,7 +20,7 @@ public class TravelManagerTest
         TravelManagerImpl travelManager = new TravelManagerImpl();
         Travel t1 = new Travel(1, "Gdansk", "London", 89);
         travelManager.create(t1);
-        assertEquals(1, travelManager.create(t1));
+        assertEquals(1, travelManager.read(1));
     }
 
     @Test
@@ -34,6 +32,17 @@ public class TravelManagerTest
         assertEquals("Gdansk", travelManager.read(2).getFrom());
         assertEquals("London", travelManager.read(2).getDirection());
         assertEquals(89, travelManager.read(2).getPrice());
+    }
+
+    @Test
+    public void testReadAll() throws Exception {
+        TravelManagerImpl travelManager = new TravelManagerImpl();
+        Travel t21 = new Travel(3, "Gdansk", "London", 89);
+        Travel t22 = new Travel(4, "Krakow", "Milano", 119);
+        travelManager.create(t21);
+        travelManager.create(t22);
+        assertEquals(t21, travelManager.read(3));
+        assertEquals(t22, travelManager.read(4));
     }
 
     @Test
