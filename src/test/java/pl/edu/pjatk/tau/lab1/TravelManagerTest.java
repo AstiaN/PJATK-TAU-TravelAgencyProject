@@ -20,7 +20,7 @@ public class TravelManagerTest
         TravelManagerImpl travelManager = new TravelManagerImpl();
         Travel t1 = new Travel(1, "Gdansk", "London", 89);
         travelManager.create(t1);
-        assertEquals(1, travelManager.read(1));
+        assertEquals(t1, travelManager.read(1));
     }
 
     @Test
@@ -51,12 +51,12 @@ public class TravelManagerTest
         Travel t3 = new Travel(3, "Gdansk", "London", 89);
         Travel t4 = new Travel(4, "Krakow", "Milano", 119);
         travelManager.create(t3);
-        travelManager.update(t4, 4);
+        travelManager.update(t3, 3);
 
-        assertEquals(t4.getId(), travelManager.read(4).getId());
-        assertEquals(t4.getFrom(), travelManager.read(4).getFrom());
-        assertEquals(t4.getDirection(), travelManager.read(4).getDirection());
-        assertEquals(t4.getPrice(), travelManager.read(4).getPrice());
+        assertEquals(t3.getId(), travelManager.read(3).getId());
+        assertEquals(t3.getFrom(), travelManager.read(3).getFrom());
+        assertEquals(t3.getDirection(), travelManager.read(3).getDirection());
+        assertEquals(t3.getPrice(), travelManager.read(3).getPrice());
     }
 
     @Test
@@ -77,7 +77,7 @@ public class TravelManagerTest
 
     }
 
-    @Test(expected = IndexOutOfBoundsException.class)
+    @Test(expected = NullPointerException.class)
     public void testUpdateException() throws Exception {
         TravelManagerImpl travelManager = new TravelManagerImpl();
         Travel t7 = new Travel(7, "Gdansk", "London", 89);
