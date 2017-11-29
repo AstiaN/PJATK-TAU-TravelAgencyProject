@@ -22,5 +22,4 @@ jdk:
 os:
   - windows
 install: true
-script:
-  - TravelAgency && mvn test
+script: mvn test
