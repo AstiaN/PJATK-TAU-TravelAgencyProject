@@ -33,7 +33,7 @@ public class TravelCheckTest {
     @Before
     public void setup(){
         assertNotNull(mockManager);
-        travelCheck.setDataSource(mockManager);
+        travelCheck.setData(mockManager);
     }
     @Test
     public void testFindRecordsByRegex() throws NoSuchFieldException {
@@ -70,7 +70,7 @@ public class TravelCheckTest {
 
     @Test
     public void testFindRecordsByRegexWithMistakenRegex(){
-
+        // mock creation
         Travel t5 = new Travel(5, "Paris", "Gdansk", 405);
         Travel t6 = new Travel(6, "Gdansk", "Porto", 118);
         Travel t7 = new Travel(7, "Split", "New York", 1999);

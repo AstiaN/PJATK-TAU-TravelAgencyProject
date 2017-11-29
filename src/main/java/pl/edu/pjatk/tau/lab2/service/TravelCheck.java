@@ -10,13 +10,13 @@ import java.util.ArrayList;
 public class TravelCheck {
     private TravelManager travelManager;
 
-    public void setDataSource(TravelManager data) {
+    public void setData(TravelManager data) {
         this.travelManager = data;
     }
 
     public List<Travel> findRecordsByRegex(String regexString) {
         if (regexString == null) {
-            throw new IllegalArgumentException("regex string required!");
+            throw new IllegalArgumentException("Error");
         }
 
         List<Travel> matches = new ArrayList<Travel>();
@@ -36,8 +36,8 @@ public class TravelCheck {
     }
 
 
-    public void deleteRecords(List<Travel> albumsToRemove){
-        for (Travel travel: albumsToRemove) {
+    public void deleteRecords(List<Travel> travelsToRemove){
+        for (Travel travel: travelsToRemove) {
             travelManager.delete(travel);
         }
     }
