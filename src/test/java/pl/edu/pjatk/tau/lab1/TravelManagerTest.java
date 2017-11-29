@@ -70,7 +70,7 @@ public class TravelManagerTest
         assertEquals(t5, travelManager.read(5));
         assertEquals(t6, travelManager.read(6));
 
-        travelManager.delete(t6, 6);
+        travelManager.delete(t6);
 
         assertEquals(t5, travelManager.read(5));
         assertEquals(null, travelManager.read(6));

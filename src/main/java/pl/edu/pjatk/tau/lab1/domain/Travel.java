@@ -18,10 +18,6 @@ public class Travel {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getFrom() {
         return from;
     }

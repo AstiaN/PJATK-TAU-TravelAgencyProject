@@ -30,14 +30,13 @@ public class TravelManagerImpl implements TravelManager {
     public void update(Travel travel, int id) {
         Travel t = read(travel.getId());
         if(t != null) {
-            t.setId(travel.getId());
             t.setFrom(travel.getFrom());
             t.setDirection(travel.getDirection());
             t.setPrice(travel.getPrice());
         }
     }
 
-    public void delete(Travel travel, int id) {
+    public void delete(Travel travel) {
         travelList.remove(travel);
     }
 }

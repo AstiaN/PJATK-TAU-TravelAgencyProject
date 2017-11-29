@@ -10,5 +10,5 @@ public interface TravelManager {
     public List<Travel> readAll();
     public Travel read(int id);
     public void update(Travel travel, int id) throws NullPointerException;
-    public void delete(Travel travel, int id);
+    public void delete(Travel travel);
 }
