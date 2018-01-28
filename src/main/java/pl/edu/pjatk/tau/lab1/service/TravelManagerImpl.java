@@ -20,8 +20,8 @@ public class TravelManagerImpl implements TravelManager {
 
 
     public Travel read(int travelId) {
-        for(Travel travel : travelList) {
-            if(travel.getId() == travelId)
+        for (Travel travel : travelList) {
+            if (travel.getId() == travelId)
                 return travel;
         }
         return null;
@@ -29,7 +29,7 @@ public class TravelManagerImpl implements TravelManager {
 
     public void update(Travel travel, int id) {
         Travel t = read(travel.getId());
-        if(t != null) {
+        if (t != null) {
             t.setFrom(travel.getFrom());
             t.setDirection(travel.getDirection());
             t.setPrice(travel.getPrice());
@@ -38,5 +38,10 @@ public class TravelManagerImpl implements TravelManager {
 
     public void delete(Travel travel) {
         travelList.remove(travel);
+    }
+
+    public List<Travel> getAll() {
+        List<Travel> listOfSpaceMarines = new ArrayList<Travel>();
+        return listOfSpaceMarines;
     }
 }

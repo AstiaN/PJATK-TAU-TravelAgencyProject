@@ -42,6 +42,22 @@ public class TravelCheck {
         }
     }
 
+
+    /*public List<Travel> findRecordsByRegex2(String regexToFind) throws NoSuchFieldException{
+        List<Travel> listOfTravels = new ArrayList<>();
+        Pattern regexPattern = Pattern.compile(regexToFind);
+
+        for (Travel travel: travelManager.read()) {
+            if(regexPattern.matcher(travel.getFrom()).find())
+                listOfTravels.add(travel);
+        }
+
+        if(listOfTravels.isEmpty())
+            throw new NoSuchFieldException();
+
+        return listOfTravels;
+    }*/
+
 }
 
 
