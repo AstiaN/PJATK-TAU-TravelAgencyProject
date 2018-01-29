@@ -24,16 +24,6 @@ public class RegisterPageTest {
     private HomePage homePage;
     private static WebDriver driver;
 
-    String email= "k03@dom.com";
-    String firstname = "Jan";
-    String lastname = "Kowalski";
-    String password = "12345";
-    String address = "Jabloniowa";
-    String city = "Warsaw";
-    String state = "arizona";
-    String postalCode = "12345";
-    String phoneNumber = "123123123";
-
     @BeforeClass
     public static void driverSetup(){
 
